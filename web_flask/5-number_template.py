@@ -40,7 +40,7 @@ def print_number(number):
 @app.route('/number_template/<int:number>', strict_slashes=False)
 def print_number2(number):
     """ routed function """
-    return (render_template('5-number.html', num = number))
+    return (render_template('5-number.html', num=number))
 
 
 if __name__ == "__main__":
