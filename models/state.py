@@ -14,8 +14,8 @@ class State(BaseModel, Base):
     name = Column(String(128), nullable=False)
     db_type = os.environ.get('HBNB_TYPE_STORAGE')
     cities = relationship("City",
-                                backref="state",
-                                cascade="all, delete")
+                          backref="state",
+                          cascade="all, delete")
     if db_type != "db":
         @property
         def cities(self):
