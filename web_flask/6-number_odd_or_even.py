@@ -40,7 +40,7 @@ def print_number(number):
 @app.route('/number_template/<int:number>', strict_slashes=False)
 def print_number2(number):
     """ routed function """
-    return (render_template('5-number.html', num = number))
+    return (render_template('5-number.html', num=number))
 
 
 @app.route('/number_odd_or_even/<int:number>', strict_slashes=False)
@@ -50,7 +50,7 @@ def print_number3(number):
         d = "even"
     else:
         d = "odd"
-    return (render_template('6-number_odd_or_even.html', num = number, dual = d))
+    return (render_template('6-number_odd_or_even.html', num=number, dual=d))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000", debug=True)
