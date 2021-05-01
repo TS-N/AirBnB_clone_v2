@@ -5,8 +5,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
 import os
 from models.city import City
-from models import storage
-
+import models
 
 class State(BaseModel, Base):
     """ State class """
@@ -21,7 +20,7 @@ class State(BaseModel, Base):
         def cities(self):
             """Getter for cities when using FileStorage mode"""
             l = []
-            for elem in storage.all(City).values():
+            for elem in models.storage.all(City).values():
                 if elem.state_id == self.id:
                     l.append(elem)
             return (l)
